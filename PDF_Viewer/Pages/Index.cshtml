@@ -1,0 +1,23 @@
+﻿@page
+@model PDF_Viewer.Pages.IndexModel
+@{
+    ViewData["Title"] = "PDF Viewer";
+}
+<div class="container mt-5">
+    <h1>PDF Viewer</h1>
+    <form id="uploadForm">
+        <input type="file" id="pdfFile" name="file" accept="application/pdf" class="form-control mb-3" />
+        <button type="submit" class="btn btn-primary">Upload and View</button>
+    </form>
+
+    <div class="mt-3">
+        <button id="prevPage" class="btn btn-secondary">Previous</button>
+        <span>Page: <span id="currentPage">1</span> / <span id="totalPages">0</span></span>
+        <button id="nextPage" class="btn btn-secondary">Next</button>
+    </div>
+
+    <div id="pdfViewer" class="mt-5"></div>
+</div>
+
+<script type="module" src="/lib/pdfjs/pdf.mjs"></script>
+<script type="module" src="/js/pdfviewer.js"></script>
